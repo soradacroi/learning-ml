@@ -9,14 +9,11 @@ class vector:
     def scaler_addition(v, k):
         return i + k for i in v 
 
-
-    def dot_product(v,k):
-        if len(v)!=len(k):
-            raise ValueError("Error: Length of the vectors should be the same")
-        dot=0
-        for i in range(len(v)):
-            dot+=v[i]*k[i]
-        return dot
+    def dot_product(v: List, w: List) -> List:
+        assert len(v) == len(w), "vectors should be in same length"
+        
+        return sum([i * j for i, j in zip(v, w)])
+        
     def cross_product(v,k):
         if len(v) !=3 or len(k) !=3 :
              raise ValueError("Error: The length of the vectors shoule be 3")
